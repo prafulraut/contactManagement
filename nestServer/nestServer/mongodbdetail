@@ -1,0 +1,27 @@
+db connection only availbale in:
+>>app.module--> only connection details     MongooseModule.forRoot(MongoDB.DbConnection),
+>>own module
+>>service
+>>controller
+
+sample data:-
+dto
+schema
+interface
+
+
+in service:-
+    @InjectModel('admissionForm')--> name (it is refering module details in service)
+    private readonly admissionFormModel: Model<IadmissionForm>,
+
+----------------------------------------------------------------
+module:-
+    MongooseModule.forFeature([
+      {
+        name: 'admissionForm',
+        schema: admissionFormSchema,
+        collection: 'admission_Form',
+      },
+    ]),
+
+    
